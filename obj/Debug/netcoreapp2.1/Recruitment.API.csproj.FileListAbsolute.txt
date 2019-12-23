@@ -31,3 +31,4 @@ C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Recruitment.API.pdb
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Recruitment.API.csproj.CopyComplete
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
