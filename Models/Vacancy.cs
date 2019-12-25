@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Recruitment.API.Models
 {
@@ -8,8 +9,10 @@ namespace Recruitment.API.Models
 
         public string Name { get; set; }
 
+        [DisplayName("Atvēršanas datums")]
         public DateTime OpeningDate { get; set; }
 
+        [DisplayName("Plānotais aizvēršanas datums")]
         public DateTime ClosingDate { get; set; }
         
     }
