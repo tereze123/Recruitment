@@ -19,47 +19,31 @@
     </div>
     <hr />
 </div>
-<form>
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
     <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+        <label asp-for="Name" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <input asp-for="Name" class="form-control" />
         </div>
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        <label asp-for="OpeningDate" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <input asp-for="OpeningDate" class="form-control" />
         </div>
+        <span asp-validation-for="OpeningDate" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="ClosingDate" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <input asp-for="ClosingDate" class="form-control" />
+        </div>
+        <span asp-validation-for="ClosingDate" class="text-danger"></span>
     </div>
 </form>
-
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="OpeningDate" class="control-label"></label>
-                    <input asp-for="OpeningDate" class="form-control" />
-                    <span asp-validation-for="OpeningDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ClosingDate" class="control-label"></label>
-                    <input asp-for="ClosingDate" class="form-control" />
-                    <span asp-validation-for="ClosingDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </form>
-        </div>
-    </div>
 
     <div>
         <a asp-action="Index">Back to List</a>
