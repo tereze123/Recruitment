@@ -7,6 +7,7 @@ namespace Recruitment.API.Models
     {
         public int Id { get; set; }
 
+        [DisplayName("Vakances nosaukums")]
         public string Name { get; set; }
 
         [DisplayName("Atvēršanas datums")]

@@ -21,11 +21,11 @@
     <hr />
 
     <div class="row">
-        <div class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.OpeningDate):</div>
+        <label asp-for="OpeningDate" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.OpeningDate):</label>
         <div class="col-md-3">@Html.DisplayFor(model => model.OpeningDate)</div>
     </div>
     <div class="row">
-        <div class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.ClosingDate):</div>
+        <label asp-for="ClosingDate" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.ClosingDate):</label>
         <div class="col-md-3">@Html.DisplayFor(model => model.ClosingDate)</div>
     </div>
 </div>
