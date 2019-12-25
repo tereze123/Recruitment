@@ -20,8 +20,13 @@ namespace Recruitment.API.Controllers
         }
 
         // GET: Vacancies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
+            if (!string.IsNullOrEmpty(id))
+            {
+                return View(await _context.Vacancies.Where(vacancy => vacancy.Name.Contains(id.ToLower())).ToListAsync());
+            }
+
             return View(await _context.Vacancies.ToListAsync());
         }
 
