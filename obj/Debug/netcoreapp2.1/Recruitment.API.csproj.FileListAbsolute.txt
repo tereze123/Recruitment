@@ -37,3 +37,8 @@ C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Vacancies\Details.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Vacancies\Edit.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Vacancies\Index.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Candidates\Create.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Candidates\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Candidates\Details.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Candidates\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Candidates\Index.g.cshtml.cs

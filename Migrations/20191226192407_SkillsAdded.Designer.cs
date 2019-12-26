@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication2.Models;
 
 namespace Recruitment.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191226192407_SkillsAdded")]
+    partial class SkillsAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -217,70 +219,6 @@ namespace Recruitment.API.Migrations
                     b.ToTable("Candidates");
                 });
 
-            modelBuilder.Entity("Recruitment.API.Models.ObjectSkill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ObjectId");
-
-                    b.Property<int>("ObjectTypeId");
-
-                    b.Property<int>("SkillId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ObjectTypeId");
-
-                    b.HasIndex("SkillId");
-
-                    b.ToTable("ObjectSkills");
-                });
-
-            modelBuilder.Entity("Recruitment.API.Models.ObjectType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ObjectTypes");
-                });
-
-            modelBuilder.Entity("Recruitment.API.Models.Skill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("SkillTypeId");
-
-                    b.Property<string>("Value");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SkillTypeId");
-
-                    b.ToTable("Skills");
-                });
-
-            modelBuilder.Entity("Recruitment.API.Models.SkillType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SkillTypes");
-                });
-
             modelBuilder.Entity("Recruitment.API.Models.Status", b =>
                 {
                     b.Property<int>("Id")
@@ -402,27 +340,6 @@ namespace Recruitment.API.Migrations
                     b.HasOne("Recruitment.API.Models.Vacancy", "Vacancy")
                         .WithMany()
                         .HasForeignKey("VacancyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Recruitment.API.Models.ObjectSkill", b =>
-                {
-                    b.HasOne("Recruitment.API.Models.ObjectType", "ObjectType")
-                        .WithMany()
-                        .HasForeignKey("ObjectTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Recruitment.API.Models.Skill", "Skill")
-                        .WithMany()
-                        .HasForeignKey("SkillId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Recruitment.API.Models.Skill", b =>
-                {
-                    b.HasOne("Recruitment.API.Models.SkillType", "SkillType")
-                        .WithMany()
-                        .HasForeignKey("SkillTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

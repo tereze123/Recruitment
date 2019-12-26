@@ -28,5 +28,13 @@
         public DbSet<Test> Tests { get; set; }
 
         public DbSet<TestResult> TestResults { get; set; }
+
+        public DbSet<ObjectSkill> ObjectSkills { get; set; }
+
+        public DbSet<ObjectType> ObjectTypes { get; set; }
+
+        public DbSet<Skill> Skills { get; set; }
+
+        public DbSet<SkillType> SkillTypes { get; set; }
     }
 }
