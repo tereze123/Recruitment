@@ -11,6 +11,20 @@
         {           
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TestResult>()
+                .HasKey(tr => new { tr.CandidateId, tr.TestId });
+        }
+
         public DbSet<Vacancy> Vacancies { get; set; }
+
+        public DbSet<Candidate> Candidates { get; set; }
+
+        public DbSet<Status> Status { get; set; }
+
+        public DbSet<Test> Tests { get; set; }
+
+        public DbSet<TestResult> TestResults { get; set; }
     }
 }
