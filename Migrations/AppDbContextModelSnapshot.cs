@@ -202,11 +202,15 @@ namespace Recruitment.API.Migrations
 
                     b.Property<string>("Surname");
 
+                    b.Property<int?>("TestId");
+
                     b.Property<int>("VacancyId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("StatusId");
+
+                    b.HasIndex("TestId");
 
                     b.HasIndex("VacancyId");
 
@@ -226,6 +230,34 @@ namespace Recruitment.API.Migrations
                     b.ToTable("Status");
                 });
 
+            modelBuilder.Entity("Recruitment.API.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tests");
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.TestResult", b =>
+                {
+                    b.Property<int>("CandidateId");
+
+                    b.Property<int>("TestId");
+
+                    b.Property<int>("ResultPercentage");
+
+                    b.HasKey("CandidateId", "TestId");
+
+                    b.HasIndex("TestId");
+
+                    b.ToTable("TestResults");
+                });
+
             modelBuilder.Entity("Recruitment.API.Models.Vacancy", b =>
                 {
                     b.Property<int>("Id")
@@ -238,7 +270,11 @@ namespace Recruitment.API.Migrations
 
                     b.Property<DateTime>("OpeningDate");
 
+                    b.Property<int?>("TestId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("TestId");
 
                     b.ToTable("Vacancies");
                 });
@@ -295,10 +331,34 @@ namespace Recruitment.API.Migrations
                         .HasForeignKey("StatusId")
                         .OnDelete(DeleteBehavior.Cascade);
 
+                    b.HasOne("Recruitment.API.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId");
+
                     b.HasOne("Recruitment.API.Models.Vacancy", "Vacancy")
                         .WithMany()
                         .HasForeignKey("VacancyId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.TestResult", b =>
+                {
+                    b.HasOne("Recruitment.API.Models.Candidate", "Candidate")
+                        .WithMany()
+                        .HasForeignKey("CandidateId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Recruitment.API.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.Vacancy", b =>
+                {
+                    b.HasOne("Recruitment.API.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId");
                 });
 #pragma warning restore 612, 618
         }

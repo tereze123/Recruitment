@@ -10,7 +10,7 @@ using WebApplication2.Models;
 namespace Recruitment.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191223065140_InitialMigration")]
+    [Migration("20191226190300_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -186,6 +186,101 @@ namespace Recruitment.API.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Recruitment.API.Models.Candidate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<DateTime>("RegistrationDate");
+
+                    b.Property<int>("StatusId");
+
+                    b.Property<string>("Surname");
+
+                    b.Property<int?>("TestId");
+
+                    b.Property<int>("VacancyId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StatusId");
+
+                    b.HasIndex("TestId");
+
+                    b.HasIndex("VacancyId");
+
+                    b.ToTable("Candidates");
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.Status", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Status");
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tests");
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.TestResult", b =>
+                {
+                    b.Property<int>("CandidateId");
+
+                    b.Property<int>("TestId");
+
+                    b.Property<int>("ResultPercentage");
+
+                    b.HasKey("CandidateId", "TestId");
+
+                    b.HasIndex("TestId");
+
+                    b.ToTable("TestResults");
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.Vacancy", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ClosingDate");
+
+                    b.Property<string>("Name");
+
+                    b.Property<DateTime>("OpeningDate");
+
+                    b.Property<int?>("TestId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TestId");
+
+                    b.ToTable("Vacancies");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -229,6 +324,43 @@ namespace Recruitment.API.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.Candidate", b =>
+                {
+                    b.HasOne("Recruitment.API.Models.Status", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Recruitment.API.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId");
+
+                    b.HasOne("Recruitment.API.Models.Vacancy", "Vacancy")
+                        .WithMany()
+                        .HasForeignKey("VacancyId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.TestResult", b =>
+                {
+                    b.HasOne("Recruitment.API.Models.Candidate", "Candidate")
+                        .WithMany()
+                        .HasForeignKey("CandidateId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Recruitment.API.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Recruitment.API.Models.Vacancy", b =>
+                {
+                    b.HasOne("Recruitment.API.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId");
                 });
 #pragma warning restore 612, 618
         }

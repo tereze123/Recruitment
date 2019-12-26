@@ -22,7 +22,7 @@ namespace Recruitment.API.Models
 
         public Status Status { get; set; }
 
-        public int TestId { get; set; }
+        public int? TestId { get; set; }
 
         public Test Test { get; set; }
 

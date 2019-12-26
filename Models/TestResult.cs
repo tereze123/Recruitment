@@ -9,5 +9,7 @@
         public Test Test { get; set; }
 
         public int TestId { get; set; }
+
+        public int ResultPercentage { get; set; }
     }
 }

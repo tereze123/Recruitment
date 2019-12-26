@@ -18,6 +18,6 @@ namespace Recruitment.API.Models
 
         public Test Test { get; set; }
 
-        public int TestId { get; set; }
+        public int? TestId { get; set; }
     }
 }
