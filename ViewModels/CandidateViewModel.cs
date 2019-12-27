@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Recruitment.API.ViewModels
 {
-    public class CandidateViewModel
+    public class CandidateViewModel : Candidate
     {
-        public List<Status> Status { get; set; }
+        public List<Status> Statuses { get; set; }
     }
 }

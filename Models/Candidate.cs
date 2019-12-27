@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Recruitment.API.Models
 {
@@ -17,6 +18,7 @@ namespace Recruitment.API.Models
         public string PhoneNumber { get; set; }
 
         [DisplayName("E-pasts")]
+        [Required(ErrorMessage = "E-pasta adrese jāievada obligāti"), EmailAddress(ErrorMessage = "Nepareizs e-pasta formāts")]
         public string Email { get; set; }
 
         [DisplayName("Vakance")]

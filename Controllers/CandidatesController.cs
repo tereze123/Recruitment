@@ -50,9 +50,9 @@ namespace Recruitment.API.Controllers
         // GET: Candidates/Create
         public IActionResult Create()
         {
-            ViewData["StatusId"] = new SelectList(_context.Status, "Id", "Id");
+            ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name");
             ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Id");
-            ViewData["VacancyId"] = new SelectList(_context.Vacancies, "Id", "Id");
+            ViewData["VacancyName"] = new SelectList(_context.Vacancies, "Id", "Name");
             return View();
         }
 

@@ -1,66 +1,43 @@
 ﻿@model Recruitment.API.Models.Candidate
 
-@{
-    ViewData["Title"] = "Details";
-}
-
-<h2>Details</h2>
-
-<div>
-    <h4>Candidate</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h4><a asp-action="Index">Atpakaļ pie atvērtajām vakancēm</a></h4>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <h4><a asp-action="Edit" asp-route-id="@Model.Id">Labot informāciju</a></h4>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="text-center">@Model.Name @Model.Surname</h2>
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Surname)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Surname)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Vacancy)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Vacancy.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Status.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Test)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Test.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.RegistrationDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.RegistrationDate)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+    <div class="row">
+        <label asp-for="PhoneNumber" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.PhoneNumber):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.PhoneNumber)</div>
+    </div>
+    <div class="row">
+        <label asp-for="Email" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.Email):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.Email)</div>
+    </div>
+    <div class="row">
+        <label asp-for="Vacancy" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.Vacancy.Name):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.Vacancy.Name)</div>
+    </div>
+    <div class="row">
+        <label asp-for="Status" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.Status):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.Status.Name)</div>
+    </div>
+    <div class="row">
+        <label asp-for="Test" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.Test):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.Test.Name)</div>
+    </div>
+    <div class="row">
+        <label asp-for="RegistrationDate" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.RegistrationDate):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.RegistrationDate)</div>
+    </div>
 </div>
