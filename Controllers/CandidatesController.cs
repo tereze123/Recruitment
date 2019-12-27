@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,8 +18,19 @@ namespace Recruitment.API.Controllers
         }
 
         // GET: Candidates
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
+            if (!string.IsNullOrEmpty(id))
+            {
+                return View(await _context
+                    .Candidates
+                    .Where(candidate => candidate.Name.Contains(id.ToLower()) || candidate.Surname.Contains(id.ToLower())) 
+                    .Include(c => c.Status)
+                    .Include(c => c.Test)
+                    .Include(c => c.Vacancy)
+                    .ToListAsync());
+            }
+
             var appDbContext = _context.Candidates.Include(c => c.Status).Include(c => c.Test).Include(c => c.Vacancy);
             return View(await appDbContext.ToListAsync());
         }
