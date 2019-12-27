@@ -60,7 +60,7 @@ using Recruitment.API.Models;
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-4\">\r\n            <h4>");
             EndContext();
             BeginContext(139, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c4e8903938641739ace15d2548568fd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "186739ffbb934a8c94678b559c418c9b", async() => {
                 BeginContext(161, 31, true);
                 WriteLiteral("Atpakaļ pie atvērtajām vakancēm");
                 EndContext();
@@ -82,12 +82,12 @@ using Recruitment.API.Models;
             WriteLiteral("</h4>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-4\">\r\n                <h3>Vai tiešām dzēst?</h3>\r\n            </div>\r\n            ");
             EndContext();
             BeginContext(360, 202, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8669fb11cd6043128eea6eb00551d321", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d47094e8a82944a4b51884e259934391", async() => {
                 BeginContext(409, 18, true);
                 WriteLiteral("\r\n                ");
                 EndContext();
                 BeginContext(427, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "cccf86a1dc05457ebce7ad214ca409ac", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "596b1e2f57f64992a698cc5d7779eb67", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

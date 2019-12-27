@@ -61,7 +61,7 @@ using Recruitment.API.Models;
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <h2 class=\"text-center\">Atvērtās vakances</h2>\r\n    </div>\r\n    <hr />\r\n\r\n    <div class=\"row\" style=\"margin-bottom:1em\">\r\n        ");
             EndContext();
             BeginContext(241, 414, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2efa0dfdea544c29bb9b72c9975404a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8738650cc5b472dad4b3582e0e843af", async() => {
                 BeginContext(304, 344, true);
                 WriteLiteral(@"
             <div class=""md-form my-0"">
@@ -91,7 +91,7 @@ using Recruitment.API.Models;
             WriteLiteral("\r\n        <p class=\"pull-right\">\r\n            ");
             EndContext();
             BeginContext(701, 50, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1675c407a53d473c97555f9ca2303edd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7d3a8792be8405fa536625ef2f0cfed", async() => {
                 BeginContext(724, 23, true);
                 WriteLiteral("Pievienot jaunu vakanci");
                 EndContext();
@@ -182,7 +182,7 @@ using Recruitment.API.Models;
             WriteLiteral("\r\n                    </td>\r\n                    <td></td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1892, 239, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a39792e4acb447d58981e04bcc63254d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e5481d781c2486195986daf10a08b97", async() => {
                 BeginContext(1956, 168, true);
                 WriteLiteral("\r\n                            <input type=\"submit\" value=\"Skatīt\" class=\"btn btn-sm btn-success \" style=\"margin-bottom:1em; margin-top:1em\" />\r\n                        ");
                 EndContext();
@@ -221,7 +221,7 @@ using Recruitment.API.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(2157, 194, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82076b6ad3634b709741042cee545cfa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ece5f2d2103745b0b194b5d09abd071e", async() => {
                 BeginContext(2220, 124, true);
                 WriteLiteral("\r\n                            <input type=\"submit\" value=\"Dzēst\" class=\"btn btn-sm btn-danger \" />\r\n                        ");
                 EndContext();

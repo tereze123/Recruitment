@@ -7,6 +7,10 @@ namespace Recruitment.API.Models
         [DisplayName("Pieteikto kandidātu skaits")]
         public int CandidateCount { get; set; }
 
+        public int SkillTypeId { get; set; }
+
+        public string SkillValue { get; set; }
+
         /*
         public List<Skill> EducationSkills { get; set; }
         public List<Skill> SkillSkills { get; set; }

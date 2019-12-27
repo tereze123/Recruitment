@@ -57,7 +57,7 @@ using Recruitment.API.Models;
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-4\">\r\n            <h4>");
             EndContext();
             BeginContext(139, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3123014b75764c9ca82ccfd176c5263d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f886f3ff3d24360bf30152e26e0f0fd", async() => {
                 BeginContext(161, 31, true);
                 WriteLiteral("Atpakaļ pie atvērtajām vakancēm");
                 EndContext();
@@ -79,7 +79,7 @@ using Recruitment.API.Models;
             WriteLiteral("</h4>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <h4>");
             EndContext();
             BeginContext(315, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c667b1d147984ac2b06e816e5043ad3e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f69c0d6aafc6479c9f865618d8ac5d0a", async() => {
                 BeginContext(361, 17, true);
                 WriteLiteral("Labot informāciju");
                 EndContext();
@@ -134,7 +134,7 @@ using Recruitment.API.Models;
             WriteLiteral("</h2>\r\n    </div>\r\n    <hr />\r\n\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(562, 119, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b11d18cccc04c299bbff0f66bc153a7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3a971823dd44156a02734098076c36e", async() => {
                 BeginContext(625, 47, false);
 #line 20 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Candidates\Details.cshtml"
                                                                  Write(Html.DisplayNameFor(model => model.PhoneNumber));
@@ -178,7 +178,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(808, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49413b6abbec4de88eab6becc14fa4ac", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93b26b0904934b71b8058d218ff65a42", async() => {
                 BeginContext(865, 41, false);
 #line 24 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Candidates\Details.cshtml"
                                                            Write(Html.DisplayNameFor(model => model.Email));
@@ -222,7 +222,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(1036, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "033ae36932244ae9a2304e50aeb4dfe8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff9dfdb9f02a48bdab225504828a3420", async() => {
                 BeginContext(1095, 48, false);
 #line 28 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Candidates\Details.cshtml"
                                                              Write(Html.DisplayNameFor(model => model.Vacancy.Name));
@@ -266,7 +266,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(1280, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aa11d954650f44ebb09cfae402fdc601", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ccdf9357a2e48fa8e99a49853de9e0f", async() => {
                 BeginContext(1338, 42, false);
 #line 32 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Candidates\Details.cshtml"
                                                             Write(Html.DisplayNameFor(model => model.Status));
@@ -310,7 +310,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(1516, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83ada3d80b7c43f1873cacaa9fe5909f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "171c65fc98e24ef9ab3903b599f8d27b", async() => {
                 BeginContext(1572, 40, false);
 #line 36 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Candidates\Details.cshtml"
                                                           Write(Html.DisplayNameFor(model => model.Test));
@@ -354,7 +354,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(1746, 129, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0796029ba9944f4af7297d1c8504ada", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c33455418d3046be8e9179a16cc88703", async() => {
                 BeginContext(1814, 52, false);
 #line 40 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Candidates\Details.cshtml"
                                                                       Write(Html.DisplayNameFor(model => model.RegistrationDate));

@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Recruitment.API.Enums;
 using Recruitment.API.Models;
 using WebApplication2.Models;
 
@@ -48,6 +50,8 @@ namespace Recruitment.API.Controllers
         // GET: Vacancies/Create
         public IActionResult Create()
         {
+
+            ViewData["SkillTypeName"] = new SelectList(_context.SkillTypes, "Id", "Name");
             return View();
         }
 
@@ -56,15 +60,47 @@ namespace Recruitment.API.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,OpeningDate,ClosingDate")] Vacancy vacancy)
+        public async Task<IActionResult> Create(VacancyViewModel VacancyViewModel)
         {
             if (ModelState.IsValid)
             {
+                Vacancy vacancy = new Vacancy
+                {
+                    Name = VacancyViewModel.Name,
+                    OpeningDate = VacancyViewModel.OpeningDate,
+                    ClosingDate = VacancyViewModel.ClosingDate,
+                    TestId = VacancyViewModel.TestId,
+                    Test = VacancyViewModel.Test,
+                };
                 _context.Add(vacancy);
+
+                await _context.SaveChangesAsync();
+
+                Skill skill = new Skill
+                {
+                    Value = VacancyViewModel.SkillValue,
+                    SkillTypeId = VacancyViewModel.SkillTypeId,
+                };
+                _context.Add(skill);
+
+                await _context.SaveChangesAsync();
+
+                int vacancyId = vacancy.Id;
+                int skillId = skill.Id;
+
+                ObjectSkill objectSkill = new ObjectSkill
+                {
+                    ObjectId = vacancyId,
+                    ObjectTypeId = (int)ObjectTypeEnum.Vakance,
+                    SkillId = skillId,
+                };
+                _context.Add(objectSkill);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(vacancy);
+            ViewData["SkillTypeName"] = new SelectList(_context.SkillTypes, "Id", "Name");
+            return View(VacancyViewModel);
         }
 
         // GET: Vacancies/Edit/5
