@@ -62,7 +62,7 @@ using Recruitment.API.Enums;
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-4\">\r\n            <h4>");
             EndContext();
             BeginContext(177, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c35d53762c374a0a8894785609d7306e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96d868745c7048aa8bc3fd7e8e966425", async() => {
                 BeginContext(199, 31, true);
                 WriteLiteral("Atpakaļ pie atvērtajām vakancēm");
                 EndContext();
@@ -84,7 +84,7 @@ using Recruitment.API.Enums;
             WriteLiteral("</h4>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <h4>");
             EndContext();
             BeginContext(353, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb3e6fa2c85d417da77505ce709fc806", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a964361b7064de8b832574f13e36fa2", async() => {
                 BeginContext(399, 17, true);
                 WriteLiteral("Labot informāciju");
                 EndContext();
@@ -129,7 +129,7 @@ using Recruitment.API.Enums;
             WriteLiteral("</h2>\r\n    </div>\r\n    <hr />\r\n\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(611, 119, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8ce8cfad5834a58a08ea919fd3720c0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3b5890ed95147ddbcf00bbd94083965", async() => {
                 BeginContext(674, 47, false);
 #line 21 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Vacancies\Details.cshtml"
                                                                  Write(Html.DisplayNameFor(model => model.OpeningDate));
@@ -173,7 +173,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(857, 119, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a3af61c9facc4b73af38c34d88325ff5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b073c3756624118b1b080ae40bdd9f0", async() => {
                 BeginContext(920, 47, false);
 #line 25 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Vacancies\Details.cshtml"
                                                                  Write(Html.DisplayNameFor(model => model.ClosingDate));
@@ -217,7 +217,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(1103, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ca9c9cc9f114f7aaf3a2cb0587ab683", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "615ff7e587eb43fe9127e991ca47f8ef", async() => {
                 BeginContext(1166, 50, false);
 #line 29 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Vacancies\Details.cshtml"
                                                                  Write(Html.DisplayNameFor(model => model.CandidateCount));

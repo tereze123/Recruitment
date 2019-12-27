@@ -96,28 +96,37 @@ namespace Recruitment.API.Controllers
 
                 await _context.SaveChangesAsync();
 
-                Skill skill = new Skill
+                foreach (var item in VacancyViewModel.Skills)
                 {
-                    Value = VacancyViewModel.SkillValue,
-                    SkillTypeId = VacancyViewModel.SkillTypeId,
-                };
-                _context.Add(skill);
+                    if (string.IsNullOrEmpty(item.Value))
+                    {
+                        continue;
+                    }
 
-                await _context.SaveChangesAsync();
+                    Skill skill = new Skill
+                    {
+                        Value = item.Value,
+                        SkillTypeId = item.SkillTypeId,
+                    };
+                    _context.Add(skill);
 
-                int vacancyId = vacancy.Id;
-                int skillId = skill.Id;
+                    await _context.SaveChangesAsync();
 
-                ObjectSkill objectSkill = new ObjectSkill
-                {
-                    ObjectId = vacancyId,
-                    ObjectTypeId = (int)ObjectTypeEnum.Vakance,
-                    SkillId = skillId,
-                };
-                _context.Add(objectSkill);
+                    int vacancyId = vacancy.Id;
+                    int skillId = skill.Id;
 
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                    ObjectSkill objectSkill = new ObjectSkill
+                    {
+                        ObjectId = vacancyId,
+                        ObjectTypeId = (int)ObjectTypeEnum.Vakance,
+                        SkillId = skillId,
+                    };
+                    _context.Add(objectSkill);
+
+                    await _context.SaveChangesAsync();
+                }
+                    return RedirectToAction(nameof(Index));
+                
             }
             ViewData["SkillTypeName"] = new SelectList(_context.SkillTypes, "Id", "Name");
             return View(VacancyViewModel);
