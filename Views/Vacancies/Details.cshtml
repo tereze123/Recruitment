@@ -1,4 +1,5 @@
-﻿@model Recruitment.API.Models.Vacancy
+﻿@using Recruitment.API.Enums 
+@model Recruitment.API.Models.VacancyViewModel
 
 <div class="container">
     <div class="row">
@@ -24,4 +25,34 @@
         <label asp-for="ClosingDate" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.ClosingDate):</label>
         <div class="col-md-3">@Html.DisplayFor(model => model.ClosingDate)</div>
     </div>
+    <div class="row">
+        <label asp-for="ClosingDate" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.CandidateCount):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.CandidateCount)</div>
+    </div>
+
+    <hr />
+    <p>Izglītība</p>
+    @foreach (var item in Model.Skills.Where(os => os.SkillTypeId == (int)SkillTypeEnum.Izglitiba))
+    {
+
+        <div class="row col-md-offset-1">
+            <p>@item.Value</p>
+        </div>
+    }
+    <hr />
+    <p>Prasmes:</p>
+    @foreach (var item in Model.Skills.Where(os => os.SkillTypeId == (int)SkillTypeEnum.Prasme))
+    {
+        <div class="row col-md-offset-1">
+            <p>@item.Value</p>
+        </div>
+    }
+    <hr />
+    <p>Darba pieredze:</p>
+    @foreach (var item in Model.Skills.Where(os => os.SkillTypeId == (int)SkillTypeEnum.DarbaPieredze))
+    {
+        <div class="row col-md-offset-1">
+            <p>@item.Value</p>
+        </div>
+    }
 </div>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Recruitment.API.Models
 {
@@ -12,5 +13,7 @@ namespace Recruitment.API.Models
 
         [DisplayName("Kompetences vērtība")]
         public string SkillValue { get; set; }
+
+        public List<Skill> Skills { get; set; }
     }
 }

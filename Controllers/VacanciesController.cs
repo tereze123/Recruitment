@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -39,12 +40,31 @@ namespace Recruitment.API.Controllers
 
             var vacancy = await _context.Vacancies
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (vacancy == null)
             {
                 return NotFound();
             }
 
-            return View(vacancy);
+            List<int> skillIds = _context.ObjectSkills
+                 .Where(os => os.ObjectId == vacancy.Id)
+                 .Where(os => os.ObjectTypeId == (int)ObjectTypeEnum.Vakance).Select(o => o.Id)
+                 .ToList();
+
+            VacancyViewModel vacancyViewModel = new VacancyViewModel
+            {
+                Id = vacancy.Id,
+                Name = vacancy.Name,
+                OpeningDate = vacancy.OpeningDate,
+                ClosingDate = vacancy.ClosingDate,
+                Test = vacancy.Test,
+                TestId = vacancy.TestId,
+                CandidateCount = _context.Candidates.Where(c => c.VacancyId == vacancy.Id).Count(),
+                Skills = _context.Skills.Where(s => skillIds.Contains(s.Id)).ToList(),
+            };
+
+
+            return View(vacancyViewModel);
         }
 
         // GET: Vacancies/Create
