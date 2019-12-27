@@ -69,9 +69,9 @@ namespace Recruitment.API.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StatusId"] = new SelectList(_context.Status, "Id", "Id", candidate.StatusId);
+            ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name", candidate.StatusId);
             ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Id", candidate.TestId);
-            ViewData["VacancyId"] = new SelectList(_context.Vacancies, "Id", "Id", candidate.VacancyId);
+            ViewData["VacancyName"] = new SelectList(_context.Vacancies, "Id", "Name", candidate.VacancyId);
             return View(candidate);
         }
 
@@ -88,9 +88,9 @@ namespace Recruitment.API.Controllers
             {
                 return NotFound();
             }
-            ViewData["StatusId"] = new SelectList(_context.Status, "Id", "Id", candidate.StatusId);
+            ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name", candidate.StatusId);
             ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Id", candidate.TestId);
-            ViewData["VacancyId"] = new SelectList(_context.Vacancies, "Id", "Id", candidate.VacancyId);
+            ViewData["VacancyName"] = new SelectList(_context.Vacancies, "Id", "Name", candidate.VacancyId);
             return View(candidate);
         }
 
