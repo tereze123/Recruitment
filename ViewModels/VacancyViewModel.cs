@@ -14,6 +14,6 @@ namespace Recruitment.API.Models
         [DisplayName("Kompetences vērtība")]
         public string SkillValue { get; set; }
 
-        public List<Skill> Skills { get; set; }
+        public List<Skill> Skills { get; set; } = new List<Skill>();
     }
 }

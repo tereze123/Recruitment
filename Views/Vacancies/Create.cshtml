@@ -1,4 +1,5 @@
-﻿@model Recruitment.API.Models.VacancyViewModel
+﻿@using Recruitment.API.Enums
+@model Recruitment.API.Models.VacancyViewModel
 
 <div class="container">
     <div class="row">
@@ -43,6 +44,38 @@
                 <select asp-for="SkillTypeId" class="form-control" asp-items="ViewBag.SkillTypeName"></select>
             </div>
         </div>
+
+        <hr />
+        <p>Izglītība</p>
+        @{var educationType = (int)SkillTypeEnum.Izglitiba; }
+        <div class="form-group row">
+            <input id="Skills[0].SkillTypeId" name="Skills[0].SkillTypeId" type="hidden" value="@educationType" />
+            <label asp-for="Skills[0].Value" class="col-md-offset-1 col-md-3 col-form-label"></label>
+            <div class="col-md-3">
+                <input asp-for="Skills[0].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[0].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[1].SkillTypeId" name="Skills[1].SkillTypeId" type="hidden" value="@educationType" />
+            <label asp-for="Skills[1].Value" class="col-md-offset-1 col-md-3 col-form-label"></label>
+            <div class="col-md-3">
+                <input asp-for="Skills[1].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[1].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[2].SkillTypeId" name="Skills[2].SkillTypeId" type="hidden" value="@educationType" />
+            <label asp-for="Skills[2].Value" class="col-md-offset-1 col-md-3 col-form-label"></label>
+            <div class="col-md-3">
+                <input asp-for="Skills[2].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[2].Value" class="text-danger"></span>
+        </div>
+        <hr />
+        <p>Prasmes:</p>
+        <hr />
+        <p>Darba pieredze:</p>
         <div class="form-group pull-right">
             <input type="submit" value="Izveidot" class="btn btn-info" />
         </div>
