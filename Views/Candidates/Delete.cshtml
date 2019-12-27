@@ -1,67 +1,70 @@
 ﻿@model Recruitment.API.Models.Candidate
 
-@{
-    ViewData["Title"] = "Delete";
-}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h4><a asp-action="Index">Atpakaļ pie atvērtajām vakancēm</a></h4>
+        </div>
 
-<h3>Vai tiešām dzēst?</h3>
-<div>
-    <h4>Candidate</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Surname)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Surname)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Vacancy)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Vacancy.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Status.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Test)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Test.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.RegistrationDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.RegistrationDate)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Vai tiešām dzēst?</h3>
+            </div>
+            <form asp-action="Delete" style="margin-top:1em">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Dzēst" class="btn btn-danger" />
+            </form>
+        </div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vacancy)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Vacancy.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Status.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Test)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Test.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.RegistrationDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RegistrationDate)
+            </dd>
+        </dl>
+    </div>
 </div>

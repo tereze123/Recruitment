@@ -1,37 +1,41 @@
 ﻿@model Recruitment.API.Models.Vacancy
 
-@{
-    ViewData["Title"] = "Delete";
-}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h4><a asp-action="Index">Atpakaļ pie atvērtajām vakancēm</a></h4>
+        </div>
 
-<h3>Vai tiešām dzēst?</h3>
-<div>
-    <h4>Vacancy</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.OpeningDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.OpeningDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ClosingDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ClosingDate)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Vai tiešām dzēst?</h3>
+            </div>
+            <form asp-action="Delete" style="margin-top:1em">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Dzēst" class="btn btn-danger" />
+            </form>
+        </div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.OpeningDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OpeningDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ClosingDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClosingDate)
+            </dd>
+        </dl>
+    </div>
+
 </div>
