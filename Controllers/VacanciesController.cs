@@ -145,7 +145,25 @@ namespace Recruitment.API.Controllers
             {
                 return NotFound();
             }
-            return View(vacancy);
+
+            List<int> skillIds = _context.ObjectSkills
+                .Where(os => os.ObjectId == vacancy.Id)
+                .Where(os => os.ObjectTypeId == (int)ObjectTypeEnum.Vakance).Select(o => o.Id)
+                .ToList();
+
+            VacancyViewModel vacancyViewModel = new VacancyViewModel
+            {
+                Name = vacancy.Name,
+                OpeningDate = vacancy.OpeningDate,
+                ClosingDate = vacancy.ClosingDate,
+                TestId = vacancy.TestId,
+                Test = vacancy.Test,
+                CandidateCount = _context.Candidates.Where(c => c.VacancyId == vacancy.Id).Count(),
+                Skills = _context.Skills.Where(s => skillIds.Contains(s.Id)).ToList(),
+            };
+
+
+            return View(vacancyViewModel);
         }
 
         // POST: Vacancies/Edit/5
@@ -153,7 +171,7 @@ namespace Recruitment.API.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,OpeningDate,ClosingDate")] Vacancy vacancy)
+        public async Task<IActionResult> Edit(int id, VacancyViewModel vacancy)
         {
             if (id != vacancy.Id)
             {
@@ -178,6 +196,27 @@ namespace Recruitment.API.Controllers
                         throw;
                     }
                 }
+
+                foreach (var item in vacancy.Skills)
+                {
+                    try
+                    {
+                        _context.Update(item);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!SkillExists(item.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             return View(vacancy);
@@ -215,6 +254,11 @@ namespace Recruitment.API.Controllers
         private bool VacancyExists(int id)
         {
             return _context.Vacancies.Any(e => e.Id == id);
+        }
+
+        private bool SkillExists(int id)
+        {
+            return _context.Skills.Any(e => e.Id == id);
         }
     }
 }

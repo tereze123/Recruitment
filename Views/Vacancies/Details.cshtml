@@ -30,28 +30,30 @@
         <div class="col-md-3">@Html.DisplayFor(model => model.CandidateCount)</div>
     </div>
 
+    <p class="col-md-offset-1">Prasības:</p>
+    <br />
+    <p class="col-md-offset-1">Izglītība</p>
     <hr />
-    <p>Izglītība</p>
     @foreach (var item in Model.Skills.Where(os => os.SkillTypeId == (int)SkillTypeEnum.Izglitiba))
     {
 
-        <div class="row col-md-offset-1">
+        <div class="row col-md-offset-4">
             <p>@item.Value</p>
         </div>
     }
+    <p class="col-md-offset-1">Prasmes:</p>
     <hr />
-    <p>Prasmes:</p>
     @foreach (var item in Model.Skills.Where(os => os.SkillTypeId == (int)SkillTypeEnum.Prasme))
     {
-        <div class="row col-md-offset-1">
+        <div class="row col-md-offset-4">
             <p>@item.Value</p>
         </div>
     }
+    <p class="col-md-offset-1">Darba pieredze:</p>
     <hr />
-    <p>Darba pieredze:</p>
     @foreach (var item in Model.Skills.Where(os => os.SkillTypeId == (int)SkillTypeEnum.DarbaPieredze))
     {
-        <div class="row col-md-offset-1">
+        <div class="row col-md-offset-4">
             <p>@item.Value</p>
         </div>
     }
