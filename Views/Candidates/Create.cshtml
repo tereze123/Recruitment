@@ -1,4 +1,5 @@
-﻿@model Recruitment.API.Models.Candidate
+﻿@using Recruitment.API.Enums
+@model Recruitment.API.ViewModels.CandidateViewModel
 
 
 <div class="container">
@@ -63,6 +64,83 @@
                 <input asp-for="RegistrationDate" class="form-control" />
             </div>
             <span asp-validation-for="RegistrationDate" class="text-danger"></span>
+        </div>
+
+        <br />
+
+        <p class="col-md-offset-1">Izglītība</p>
+        <hr />
+        @{var educationType = (int)SkillTypeEnum.Izglitiba; }
+        <div class="form-group row">
+            <input id="Skills[0].SkillTypeId" name="Skills[0].SkillTypeId" type="hidden" value="@educationType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[0].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[0].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[1].SkillTypeId" name="Skills[1].SkillTypeId" type="hidden" value="@educationType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[1].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[1].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[2].SkillTypeId" name="Skills[2].SkillTypeId" type="hidden" value="@educationType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[2].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[2].Value" class="text-danger"></span>
+        </div>
+
+        <p class="col-md-offset-1">Prasmes:</p>
+        <hr />
+        @{var AbilityType = (int)SkillTypeEnum.Prasme; }
+        <div class="form-group row">
+            <input id="Skills[3].SkillTypeId" name="Skills[3].SkillTypeId" type="hidden" value="@AbilityType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[3].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[3].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[4].SkillTypeId" name="Skills[4].SkillTypeId" type="hidden" value="@AbilityType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[4].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[4].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[5].SkillTypeId" name="Skills[5].SkillTypeId" type="hidden" value="@AbilityType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[5].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[5].Value" class="text-danger"></span>
+        </div>
+
+        <p class="col-md-offset-1">Darba pieredze:</p>
+        <hr />
+        @{var ExperienceType = (int)SkillTypeEnum.DarbaPieredze; }
+        <div class="form-group row">
+            <input id="Skills[6].SkillTypeId" name="Skills[6].SkillTypeId" type="hidden" value="@ExperienceType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[6].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[6].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[7].SkillTypeId" name="Skills[7].SkillTypeId" type="hidden" value="@ExperienceType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[7].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[7].Value" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <input id="Skills[8].SkillTypeId" name="Skills[8].SkillTypeId" type="hidden" value="@ExperienceType" />
+            <div class="col-md-3 col-md-offset-4">
+                <input asp-for="Skills[8].Value" class="form-control" />
+            </div>
+            <span asp-validation-for="Skills[8].Value" class="text-danger"></span>
         </div>
         <div class="form-group pull-right">
             <input type="submit" value="Izveidot" class="btn btn-info" />

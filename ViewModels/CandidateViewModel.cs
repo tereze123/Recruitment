@@ -5,6 +5,6 @@ namespace Recruitment.API.ViewModels
 {
     public class CandidateViewModel : Candidate
     {
-        public List<Status> Statuses { get; set; }
+        public List<Skill> Skills { get; set; } = new List<Skill>();
     }
 }

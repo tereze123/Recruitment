@@ -1,10 +1,11 @@
-﻿@model Recruitment.API.Models.Candidate
+﻿@using Recruitment.API.Enums
+@model Recruitment.API.ViewModels.CandidateViewModel
 
 
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h4><a asp-action="Index">Atpakaļ pie atvērtajām vakancēm</a></h4>
+            <h4><a asp-action="Index">Atpakaļ pie visiem kandidātiem</a></h4>
         </div>
     </div>
     <div class="row">
@@ -72,6 +73,69 @@
             </div>
             <span asp-validation-for="RegistrationDate" class="text-danger"></span>
         </div>
+
+        <p class="col-md-offset-1">Prasības:</p>
+        <br />
+        <p class="col-md-offset-1">Izglītība</p>
+        <hr />
+
+
+        @for (int i = 0; i < Model.Skills.Count(); i++)
+        {
+            if (Model.Skills[i].SkillTypeId != (int)SkillTypeEnum.Izglitiba)
+            {
+                continue;
+            }
+            <div class="form-group row">
+                <input type="hidden" asp-for="@Model.Skills[i].Id" />
+                <input type="hidden" asp-for="@Model.Skills[i].SkillTypeId" />
+                <div class="col-md-3 col-md-offset-4">
+                    <input asp-for="@Model.Skills[i].Value" class="form-control" />
+                </div>
+                <span asp-validation-for="Skills[i].Value" class="text-danger"></span>
+            </div>
+        }
+        <br />
+        <p class="col-md-offset-1">Prasmes</p>
+        <hr />
+
+
+        @for (int i = 0; i < Model.Skills.Count(); i++)
+        {
+            if (Model.Skills[i].SkillTypeId != (int)SkillTypeEnum.Prasme)
+            {
+                continue;
+            }
+            <div class="form-group row">
+                <input type="hidden" asp-for="@Model.Skills[i].Id" />
+                <input type="hidden" asp-for="@Model.Skills[i].SkillTypeId" />
+                <div class="col-md-3 col-md-offset-4">
+                    <input asp-for="@Model.Skills[i].Value" class="form-control" />
+                </div>
+                <span asp-validation-for="Skills[i].Value" class="text-danger"></span>
+            </div>
+        }
+        <br />
+        <p class="col-md-offset-1">Darba pieredze</p>
+        <hr />
+
+
+        @for (int i = 0; i < Model.Skills.Count(); i++)
+        {
+            if (Model.Skills[i].SkillTypeId != (int)SkillTypeEnum.DarbaPieredze)
+            {
+                continue;
+            }
+            <div class="form-group row">
+                <input type="hidden" asp-for="@Model.Skills[i].Id" />
+                <input type="hidden" asp-for="@Model.Skills[i].SkillTypeId" />
+                <div class="col-md-3 col-md-offset-4">
+                    <input asp-for="@Model.Skills[i].Value" class="form-control" />
+                </div>
+                <span asp-validation-for="Skills[i].Value" class="text-danger"></span>
+            </div>
+        }
+
         <div class="row">
             <input type="submit" value="Saglabāt" class="btn btn-info pull-right" />
         </div>
