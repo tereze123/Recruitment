@@ -272,6 +272,13 @@ namespace Recruitment.API.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> ToDo()
+        {
+            var appDbContext = _context.Candidates.Include(c => c.Status).Include(c => c.Vacancy);
+            return View(await appDbContext.ToListAsync());
+        }
+
+
         private bool CandidateExists(int id)
         {
             return _context.Candidates.Any(e => e.Id == id);

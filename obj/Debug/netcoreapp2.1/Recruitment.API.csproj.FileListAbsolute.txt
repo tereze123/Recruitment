@@ -62,3 +62,4 @@ C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\ObjectTypes\Details.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\ObjectTypes\Edit.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\ObjectTypes\Index.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Candidates\ToDo.g.cshtml.cs
