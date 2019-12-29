@@ -1,0 +1,23 @@
+﻿@model Recruitment.API.Models.Test
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h4><a asp-action="Index">Atpakaļ pie visiem kandidātiem</a></h4>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <h4><a asp-action="Edit" asp-route-id="@Model.Id">Labot informāciju</a></h4>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="text-center">@Model.Name</h2>
+    </div>
+    <hr />
+
+    <div class="row">
+        <label asp-for="Name" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.Name):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.Name)</div>
+    </div>
+</div>

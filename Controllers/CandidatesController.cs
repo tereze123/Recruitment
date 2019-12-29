@@ -85,7 +85,7 @@ namespace Recruitment.API.Controllers
         public IActionResult Create()
         {
             ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name");
-            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Id");
+            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Name");
             ViewData["VacancyName"] = new SelectList(_context.Vacancies, "Id", "Name");
             return View();
         }
@@ -134,7 +134,7 @@ namespace Recruitment.API.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name", candidate.StatusId);
-            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Id", candidate.TestId);
+            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Name", candidate.TestId);
             ViewData["VacancyName"] = new SelectList(_context.Vacancies, "Id", "Name", candidate.VacancyId);
             return View(candidate);
         }
@@ -176,7 +176,7 @@ namespace Recruitment.API.Controllers
             };
 
             ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name", candidate.StatusId);
-            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Id", candidate.TestId);
+            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Name", candidate.TestId);
             ViewData["VacancyName"] = new SelectList(_context.Vacancies, "Id", "Name", candidate.VacancyId);
             return View(candidateViewModel);
         }

@@ -62,7 +62,7 @@
         <div class="form-group row">
             <label asp-for="TestId" class="col-md-offset-1 col-md-3 col-form-label"></label>
             <div class="col-md-3">
-                <input asp-for="TestId" class="form-control" />
+                <select asp-for="TestId" class="form-control" asp-items="ViewBag.TestId"></select>
             </div>
             <span asp-validation-for="TestId" class="text-danger"></span>
         </div>
@@ -147,4 +147,3 @@
         </form>
     </div>
 </div>
-
