@@ -24,10 +24,49 @@ namespace Recruitment.API.Controllers
         {
             if (!string.IsNullOrEmpty(id))
             {
-                return View(await _context.Vacancies.Where(vacancy => vacancy.Name.Contains(id.ToLower())).ToListAsync());
+                List<Vacancy> vacancies = await _context.Vacancies.Where(v => v.Name.Contains(id.ToLower())).ToListAsync();
+                List<VacancyViewModel> vacancyViewModels = new List<VacancyViewModel>();
+
+                foreach (var vacancy in vacancies)
+                {
+
+                    VacancyViewModel vacancyViewModel = new VacancyViewModel
+                    {
+                        Id = vacancy.Id,
+                        Name = vacancy.Name,
+                        OpeningDate = vacancy.OpeningDate,
+                        ClosingDate = vacancy.ClosingDate,
+                        Test = vacancy.Test,
+                        TestId = vacancy.TestId,
+                        CandidateCount = _context.Candidates.Where(c => c.VacancyId == vacancy.Id).Count(),
+                    };
+                    vacancyViewModels.Add(vacancyViewModel);
+                }
+
+
+                return View(vacancyViewModels);
             }
 
-            return View(await _context.Vacancies.ToListAsync());
+            List<Vacancy> vacancies1 = await _context.Vacancies.ToListAsync();
+            List<VacancyViewModel> vacancyViewModels1 = new List<VacancyViewModel>();
+
+            foreach (var vacancy in vacancies1)
+            {
+
+                VacancyViewModel vacancyViewModel = new VacancyViewModel
+                {
+                    Id = vacancy.Id,
+                    Name = vacancy.Name,
+                    OpeningDate = vacancy.OpeningDate,
+                    ClosingDate = vacancy.ClosingDate,
+                    Test = vacancy.Test,
+                    TestId = vacancy.TestId,
+                    CandidateCount = _context.Candidates.Where(c => c.VacancyId == vacancy.Id).Count(),
+                };
+                vacancyViewModels1.Add(vacancyViewModel);
+            }
+
+            return View(vacancyViewModels1);
         }
 
         // GET: Vacancies/Details/5
@@ -125,8 +164,8 @@ namespace Recruitment.API.Controllers
 
                     await _context.SaveChangesAsync();
                 }
-                    return RedirectToAction(nameof(Index));
-                
+                return RedirectToAction(nameof(Index));
+
             }
             ViewData["SkillTypeName"] = new SelectList(_context.SkillTypes, "Id", "Name");
             return View(VacancyViewModel);
