@@ -68,3 +68,6 @@ C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Tests\Details.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Tests\Edit.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Tests\Index.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Account\PasswordChange.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserInformation.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserInformationEdit.g.cshtml.cs

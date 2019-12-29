@@ -1,8 +1,8 @@
 ﻿
 @using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +41,7 @@
                         <li><a asp-area="" asp-controller="Candidates" asp-action="Index">Kandidāti</a></li>
                         <li><a asp-area="" asp-controller="Candidates" asp-action="ToDo">Veicamie darbi</a></li>
                         <li><a asp-area="" asp-controller="Tests" asp-action="Index">Testi</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Mans profils</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="UserInformation">Mans profils</a></li>
                         <li>
                             <form asp-area="Identity" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
                                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Iziet</button>
@@ -50,8 +50,8 @@
                     }
                     else
                     {
-                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
-                        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Ielogoties</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Register">Reģistrēties</a></li>
                     }
                 </ul>
             </div>

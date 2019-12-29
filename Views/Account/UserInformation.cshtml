@@ -1,0 +1,33 @@
+﻿@model Recruitment.API.ViewModels.UserInformationViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 pull-right">
+            <h4><a asp-action="UserInformationEdit">Labot informāciju</a></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 pull-right">
+            <h4><a asp-action="PasswordChange">Mainīt paroli</a></h4>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="text-center">@Model.FirstName @Model.LastName</h2>
+    </div>
+    <hr />
+
+    <div class="row">
+        <label asp-for="FirstName" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.FirstName):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.FirstName)</div>
+    </div>
+
+    <div class="row">
+        <label asp-for="LastName" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.LastName):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.LastName)</div>
+    </div>
+
+    <div class="row">
+        <label asp-for="Email" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.Email):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.Email)</div>
+    </div>
+</div>
