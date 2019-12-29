@@ -272,10 +272,19 @@ namespace Recruitment.API.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> ToDo()
+        public async Task<IActionResult> ToDo(int? id)
         {
-            var appDbContext = _context.Candidates.Include(c => c.Status).Include(c => c.Vacancy);
-            return View(await appDbContext.ToListAsync());
+            ViewData["VacancyNames"] = new SelectList(_context.Vacancies, "Id", "Name");
+            if (id != null)
+            {
+                var candidatesFiltered = _context.Candidates.Include(c => c.Status).Include(c => c.Vacancy).Where(c => c.VacancyId == id);
+                return View(await candidatesFiltered.ToListAsync());
+            }
+
+            var candidates = _context.Candidates.Include(c => c.Status).Include(c => c.Vacancy);
+            int firstVacancyId = candidates.FirstOrDefault().VacancyId;
+
+            return View(await candidates.Where(c => c.VacancyId == firstVacancyId).ToListAsync());
         }
 
 

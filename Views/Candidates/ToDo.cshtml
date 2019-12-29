@@ -1,14 +1,20 @@
 ﻿@using Recruitment.API.Enums
 @model IEnumerable<Recruitment.API.Models.Candidate>
 
-@{
-    ViewData["Title"] = "ToDoView";
-}
-
 <div class="row">
     <h2 class="text-center">Veicamie darbi</h2>
 </div>
 <hr />
+<form asp-action="ToDo">
+    <div class="row">
+        <div class="col-md-3">
+            <select asp-for="FirstOrDefault().VacancyId" class="form-control" name="id" asp-items="ViewBag.VacancyNames"></select>
+        </div>
+        <div class="col-md-3">
+            <input type="submit" value="Atlasīt" class="btn btn-success" />
+        </div>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -73,7 +79,7 @@
                         <div class="card" style="border:solid 1px #F5F5DC;border-radius: 25px;">
                             <div class="card-body text-center">
                                 <h5 class="card-title">@item.Name @item.Surname</h5>
-                                <a asp-action="Details" asp-route-id="@item.Id"  class="btn btn-success ">Skatīt</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success ">Skatīt</a>
                             </div>
                         </div>
                     }
