@@ -78,6 +78,7 @@ namespace Recruitment.API.Controllers
             }
 
             var vacancy = await _context.Vacancies
+                .Include(c => c.Test)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (vacancy == null)
@@ -109,7 +110,7 @@ namespace Recruitment.API.Controllers
         // GET: Vacancies/Create
         public IActionResult Create()
         {
-
+            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Name");
             ViewData["SkillTypeName"] = new SelectList(_context.SkillTypes, "Id", "Name");
             return View();
         }
@@ -167,6 +168,7 @@ namespace Recruitment.API.Controllers
                 return RedirectToAction(nameof(Index));
 
             }
+            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Name");
             ViewData["SkillTypeName"] = new SelectList(_context.SkillTypes, "Id", "Name");
             return View(VacancyViewModel);
         }
@@ -200,7 +202,7 @@ namespace Recruitment.API.Controllers
                 CandidateCount = _context.Candidates.Where(c => c.VacancyId == vacancy.Id).Count(),
                 Skills = _context.Skills.Where(s => skillIds.Contains(s.Id)).ToList(),
             };
-
+            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Name");
 
             return View(vacancyViewModel);
         }
@@ -216,7 +218,7 @@ namespace Recruitment.API.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["TestId"] = new SelectList(_context.Tests, "Id", "Name");
             if (ModelState.IsValid)
             {
                 try

@@ -16,8 +16,10 @@ namespace Recruitment.API.Models
         [DisplayName("Plānotais aizvēršanas datums")]
         public DateTime ClosingDate { get; set; }
 
+        [DisplayName("Tests")]
         public Test Test { get; set; }
 
+        [DisplayName("Tests")]
         public int? TestId { get; set; }
     }
 }
