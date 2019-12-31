@@ -57,7 +57,7 @@ using Recruitment.API.Models;
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-4 pull-right\">\r\n            <h4>");
             EndContext();
             BeginContext(169, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64d95a45d958471e98fd0598092efbdd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ebc9acbd2aa4c918c2a346edaf145c6", async() => {
                 BeginContext(205, 17, true);
                 WriteLiteral("Labot informāciju");
                 EndContext();
@@ -79,7 +79,7 @@ using Recruitment.API.Models;
             WriteLiteral("</h4>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-4 pull-right\">\r\n            <h4>");
             EndContext();
             BeginContext(343, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4da5f35a1424a6380da8ac5f248a612", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49e3235efbb6448e8d67c6c7f9ac9813", async() => {
                 BeginContext(374, 13, true);
                 WriteLiteral("Mainīt paroli");
                 EndContext();
@@ -121,7 +121,7 @@ using Recruitment.API.Models;
             WriteLiteral("</h2>\r\n    </div>\r\n    <hr />\r\n\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(577, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e074a67a733c40e1b932d68a166bf569", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86ea5d87d23446cab4c807fbbeb47156", async() => {
                 BeginContext(638, 45, false);
 #line 20 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Account\UserInformation.cshtml"
                                                                Write(Html.DisplayNameFor(model => model.FirstName));
@@ -165,7 +165,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(819, 113, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a94686260bed483dbf6e9450a4a05f8e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b67897e8af54b70be809c2782f24732", async() => {
                 BeginContext(879, 44, false);
 #line 25 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Account\UserInformation.cshtml"
                                                               Write(Html.DisplayNameFor(model => model.LastName));
@@ -209,7 +209,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("</div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        ");
             EndContext();
             BeginContext(1058, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "369a9affa08d44108553d7994cf4aa59", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b2834a2fbc847b89fb5a25eaf7681e1", async() => {
                 BeginContext(1115, 41, false);
 #line 30 "C:\Users\User\source\repos\Recruitment.API\Recruitment.API\Views\Account\UserInformation.cshtml"
                                                            Write(Html.DisplayNameFor(model => model.Email));

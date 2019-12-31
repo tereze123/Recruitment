@@ -38,6 +38,10 @@
         <div class="col-md-3">@Html.DisplayFor(model => model.Test.Name)</div>
     </div>
     <div class="row">
+        <label asp-for="TestResult" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.TestResult):</label>
+        <div class="col-md-3">@Html.DisplayFor(model => model.TestResult)</div>
+    </div>
+    <div class="row">
         <label asp-for="RegistrationDate" class="col-md-offset-1 col-md-3">@Html.DisplayNameFor(model => model.RegistrationDate):</label>
         <div class="col-md-3">@Html.DisplayFor(model => model.RegistrationDate)</div>
     </div>

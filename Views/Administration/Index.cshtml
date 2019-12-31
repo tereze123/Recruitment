@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Recruitment.API.Models.AppUser>
+
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center">Administratora lapa</h2>
+        </div>
+        <hr />
+
+        <div class="row" style="margin-bottom:1em">
+            <form asp-action="Index" class="form-inline mr-auto pull-left">
+                <div class="md-form my-0">
+                    <input class="form-control" type="text" name="id" placeholder="Meklēt..." aria-label="Search">
+                    <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" type="submit"> <i class="icon-search" aria-hidden="true"></i>  Meklēt</button>
+                </div>
+            </form>
+            <p class="pull-right">
+                <a asp-controller="Account" asp-action="Register">Pievienot jaunu lietotāju</a>
+                <i class="fa icon-plus-sign fa-5x"></i>
+            </p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName), @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.FirstName,@item.LastName
+                        </td>
+                        <td>
+                            <form method="get" asp-action="Details" asp-route-id="@item.Id">
+                                <input type="submit" value="Skatīt" class="btn btn-sm btn-success " style="margin-bottom:1em; margin-top:1em" />
+                            </form>
+                            <form method="get" asp-action="Delete" asp-route-id="@item.Id">
+                                <input type="submit" value="Dzēst" class="btn btn-sm btn-danger " />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

@@ -76,6 +76,7 @@ namespace Recruitment.API.Controllers
                 Test = candidate.Test,
                 RegistrationDate = candidate.RegistrationDate,
                 Skills = _context.Skills.Where(s => skillIds.Contains(s.Id)).ToList(),
+                TestResult = _context.TestResults.Where(tr => tr.TestId == candidate.TestId).FirstOrDefault(tr => tr.CandidateId == candidate.Id)?.ResultPercentage,
             };
 
             return View(candidateViewModel);
@@ -95,7 +96,7 @@ namespace Recruitment.API.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Surname,PhoneNumber,Email,VacancyId,StatusId,TestId,RegistrationDate,Skills")] CandidateViewModel candidate)
+        public async Task<IActionResult> Create([Bind("Id,Name,Surname,PhoneNumber,Email,VacancyId,StatusId,TestId,RegistrationDate,Skills,TestResult")] CandidateViewModel candidate)
         {
             if (ModelState.IsValid)
             {
@@ -131,6 +132,21 @@ namespace Recruitment.API.Controllers
 
                     await _context.SaveChangesAsync();
                 }
+
+                if (candidate.TestResult != null && candidate.TestId != null)
+                {
+                    TestResult testResult = new TestResult
+                    {
+                        CandidateId = candidate.Id,
+                        TestId = candidate.TestId.Value,
+                        ResultPercentage = candidate.TestResult.Value,
+                    };
+
+                    _context.Add(testResult);
+
+                    await _context.SaveChangesAsync();
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name", candidate.StatusId);
@@ -173,6 +189,7 @@ namespace Recruitment.API.Controllers
                 Test = candidate.Test,
                 RegistrationDate = candidate.RegistrationDate,
                 Skills = _context.Skills.Where(s => skillIds.Contains(s.Id)).ToList(),
+                TestResult = _context.TestResults.Where(tr => tr.TestId == candidate.TestId).FirstOrDefault(tr => tr.CandidateId == candidate.Id)?.ResultPercentage,
             };
 
             ViewData["StatusName"] = new SelectList(_context.Status, "Id", "Name", candidate.StatusId);
@@ -186,7 +203,7 @@ namespace Recruitment.API.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,PhoneNumber,Email,VacancyId,StatusId,TestId,RegistrationDate,Skills")] CandidateViewModel candidate)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,PhoneNumber,Email,VacancyId,StatusId,TestId,RegistrationDate,Skills,TestResult")] CandidateViewModel candidate)
         {
             if (id != candidate.Id)
             {
@@ -222,6 +239,44 @@ namespace Recruitment.API.Controllers
                     catch (DbUpdateConcurrencyException)
                     {
                         if (!SkillExists(item.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+
+                }
+                if (candidate.TestResult != null && candidate.TestId != null)
+                {
+                    try
+                    {
+                        var testResult = _context.TestResults.Where(tr => tr.TestId == candidate.TestId).FirstOrDefault(tr => tr.CandidateId == candidate.Id);
+
+                        if (testResult != null)
+                        {
+                            testResult.ResultPercentage = candidate.TestResult.Value;
+                            _context.Update(testResult);
+                        }
+                        else
+                        {
+                            TestResult newTestResult = new TestResult
+                            {
+                                ResultPercentage = candidate.TestResult.Value,
+                                TestId = candidate.TestId.Value,
+                                CandidateId = candidate.Id,
+                            };
+
+                            _context.Add(newTestResult);
+                        }
+
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!TestResultExists(candidate.TestId.Value, candidate.Id))
                         {
                             return NotFound();
                         }
@@ -296,6 +351,11 @@ namespace Recruitment.API.Controllers
         private bool SkillExists(int id)
         {
             return _context.Skills.Any(e => e.Id == id);
+        }
+
+        private bool TestResultExists(int testId, int candidateId)
+        {
+            return _context.TestResults.Where(tr => tr.TestId == testId).Any(tr => tr.CandidateId == candidateId);
         }
     }
 }
