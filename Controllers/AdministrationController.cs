@@ -25,15 +25,25 @@ namespace Recruitment.API.Controllers
 
         // GET: Administrator
         [HttpGet]
-        public ActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var users = _userManager.Users;
+            List<UserTypeViewModel> userTypeViewModels = new List<UserTypeViewModel>();
 
-            foreach (var item in collection)
+            foreach (var user in users)
             {
+                IList<string> roleList = await _userManager.GetRolesAsync(user);
+                UserTypeViewModel userTypeViewModel = new UserTypeViewModel
+                {
+                    Id = (user.Id,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    Role = roleList.ToList().FirstOrDefault(),
+                };
 
             }
-            return View(users);
+            return View(userTypeViewModels);
         }
 
         // GET: Administrator/Details/5

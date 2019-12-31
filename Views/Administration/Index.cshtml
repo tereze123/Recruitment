@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Recruitment.API.Models.AppUser>
+﻿@model IEnumerable<Recruitment.API.ViewModels.UserTypeViewModel>
 
     <div class="container">
         <div class="row">
@@ -25,25 +25,31 @@
                     <th>
                         @Html.DisplayNameFor(model => model.FirstName), @Html.DisplayNameFor(model => model.FirstName)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Role)
+                    </th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @item.FirstName,@item.LastName
-                        </td>
-                        <td>
-                            <form method="get" asp-action="Details" asp-route-id="@item.Id">
-                                <input type="submit" value="Skatīt" class="btn btn-sm btn-success " style="margin-bottom:1em; margin-top:1em" />
-                            </form>
-                            <form method="get" asp-action="Delete" asp-route-id="@item.Id">
-                                <input type="submit" value="Dzēst" class="btn btn-sm btn-danger " />
-                            </form>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        @item.FirstName,@item.LastName
+                    </td>
+                    <td>
+                        @item.Role
+                    </td>
+                    <td>
+                        <form method="get" asp-action="Details" asp-route-id="@item.Id">
+                            <input type="submit" value="Skatīt" class="btn btn-sm btn-success " style="margin-bottom:1em; margin-top:1em" />
+                        </form>
+                        <form method="get" asp-action="Delete" asp-route-id="@item.Id">
+                            <input type="submit" value="Dzēst" class="btn btn-sm btn-danger " />
+                        </form>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
