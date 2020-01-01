@@ -74,3 +74,4 @@ C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Administration\Index.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Administration\Details.g.cshtml.cs
 C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Administration\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Recruitment.API\Recruitment.API\obj\Debug\netcoreapp2.1\Razor\Views\Administration\Delete.g.cshtml.cs

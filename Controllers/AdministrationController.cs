@@ -62,17 +62,13 @@ namespace Recruitment.API.Controllers
                 Email = user.Email,
                 Role = roleList.ToList().FirstOrDefault(),
             };
-
-
-
-
             return View(userTypeViewModel);
         }
 
         // GET: Administrator/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            AppUser user = await _userManager.FindByIdAsync(id.ToString());
+            AppUser user = await _userManager.FindByIdAsync(id);
             IList<string> roleList = await _userManager.GetRolesAsync(user);
 
             UserTypeViewModel userTypeViewModel = new UserTypeViewModel
@@ -115,20 +111,33 @@ namespace Recruitment.API.Controllers
         }
 
         // GET: Administrator/Delete/5
-        public ActionResult Delete(int id)
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
         {
-            return View();
+            AppUser user = await _userManager.FindByIdAsync(id.ToString());
+            IList<string> roleList = await _userManager.GetRolesAsync(user);
+
+            UserTypeViewModel userTypeViewModel = new UserTypeViewModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Role = roleList.ToList().FirstOrDefault(),
+            };
+
+            return View(userTypeViewModel);
         }
 
         // POST: Administrator/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                AppUser user = await _userManager.FindByIdAsync(id);
+                var result = await _userManager.DeleteAsync(user);
                 return RedirectToAction(nameof(Index));
             }
             catch
