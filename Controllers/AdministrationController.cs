@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Recruitment.API.Models;
 using Recruitment.API.ViewModels;
 using System.Collections.Generic;
@@ -35,71 +36,75 @@ namespace Recruitment.API.Controllers
                 IList<string> roleList = await _userManager.GetRolesAsync(user);
                 UserTypeViewModel userTypeViewModel = new UserTypeViewModel
                 {
-                    Id = (user.Id,
+                    Id = user.Id,
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Email = user.Email,
                     Role = roleList.ToList().FirstOrDefault(),
                 };
 
+                userTypeViewModels.Add(userTypeViewModel);
             }
             return View(userTypeViewModels);
         }
 
         // GET: Administrator/Details/5
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(string id)
         {
             AppUser user = await _userManager.FindByIdAsync(id.ToString());
             IList<string> roleList = await _userManager.GetRolesAsync(user);
 
             UserTypeViewModel userTypeViewModel = new UserTypeViewModel
             {
+                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
                 Role = roleList.ToList().FirstOrDefault(),
             };
 
+
+
+
             return View(userTypeViewModel);
         }
 
-        // GET: Administrator/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Administrator/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         // GET: Administrator/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(string id)
         {
-            return View();
+            AppUser user = await _userManager.FindByIdAsync(id.ToString());
+            IList<string> roleList = await _userManager.GetRolesAsync(user);
+
+            UserTypeViewModel userTypeViewModel = new UserTypeViewModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Role = roleList.ToList().FirstOrDefault(),
+            };
+
+            ViewData["RoleNames"] = new SelectList(_roleManager.Roles.ToList(), "Name", "Name");
+
+            return View(userTypeViewModel);
         }
 
         // POST: Administrator/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Role,FirstName,LastName,Email")] UserTypeViewModel userTypeViewModel)
         {
             try
             {
-                // TODO: Add update logic here
+                AppUser user = await _userManager.FindByIdAsync(id);
+
+                user.FirstName = userTypeViewModel.FirstName;
+                user.LastName = userTypeViewModel.LastName;
+                user.Email = userTypeViewModel.Email;
+
+
+                var identityResult = await _userManager.UpdateAsync(user);
+                var identityRoleResult = await _userManager.AddToRoleAsync(user, userTypeViewModel.Role);
 
                 return RedirectToAction(nameof(Index));
             }

@@ -76,7 +76,6 @@ namespace Recruitment.API.Controllers
 
                 if (result.Succeeded)
                 {
-                    await _signManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
