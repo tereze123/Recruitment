@@ -66,12 +66,12 @@ using Recruitment.API.Enums;
             WriteLiteral("\r\n<div class=\"row\">\r\n    <h2 class=\"text-center\">Veicamie darbi</h2>\r\n</div>\r\n<hr />\r\n");
             EndContext();
             BeginContext(170, 373, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00d384c08a494979b0b5de3c1b7ba0f5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b05c379b9b441d9bd38a469c95899fd", async() => {
                 BeginContext(194, 69, true);
                 WriteLiteral("\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\">\r\n            ");
                 EndContext();
                 BeginContext(263, 118, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7442b9caa3564ab0ba8ceeb7b9f1f8ae", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a15c8f4e2214dd18f843aebf33ea4b3", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
@@ -183,7 +183,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.VacancyNam
             WriteLiteral("</h5>\r\n                                ");
             EndContext();
             BeginContext(1497, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f60195dd289849f18a3406c16ca631c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82ecf624d1a74f109b5471a7f0f5e9cb", async() => {
                 BeginContext(1570, 6, true);
                 WriteLiteral("Skatīt");
                 EndContext();
@@ -256,7 +256,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.VacancyNam
             WriteLiteral("</h5>\r\n                                ");
             EndContext();
             BeginContext(2101, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "06b5cb2daf26446eb3d426547520a90f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50dea989c47b4c648c555cbdab1b6f2c", async() => {
                 BeginContext(2174, 6, true);
                 WriteLiteral("Skatīt");
                 EndContext();
@@ -329,7 +329,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.VacancyNam
             WriteLiteral("</h5>\r\n                                ");
             EndContext();
             BeginContext(2704, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89b7ef785208427f908c09c52e393c4a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6c25f62594944cca9c2cb043dad2d8c", async() => {
                 BeginContext(2777, 6, true);
                 WriteLiteral("Skatīt");
                 EndContext();
@@ -402,7 +402,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.VacancyNam
             WriteLiteral("</h5>\r\n                                ");
             EndContext();
             BeginContext(3307, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2935f42711784ed0989253439e064eeb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96af300a72414d52885e8c650970c948", async() => {
                 BeginContext(3380, 6, true);
                 WriteLiteral("Skatīt");
                 EndContext();
@@ -475,7 +475,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.VacancyNam
             WriteLiteral("</h5>\r\n                                ");
             EndContext();
             BeginContext(3953, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab95aff229a3448a94765fc553c2cf86", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "903608aa10a74ddfa6631c043d18ea71", async() => {
                 BeginContext(4026, 6, true);
                 WriteLiteral("Skatīt");
                 EndContext();

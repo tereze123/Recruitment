@@ -8,14 +8,14 @@ namespace Recruitment.API.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Candidates");
         }
 
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            return RedirectToAction("Index", "Candidates");
         }
 
         public IActionResult Contact()
