@@ -58,7 +58,7 @@ namespace Recruitment.API.Controllers
 
             List<int> skillIds = _context.ObjectSkills
                  .Where(os => os.ObjectId == candidate.Id)
-                 .Where(os => os.ObjectTypeId == (int)ObjectTypeEnum.Kandidats).Select(o => o.Id)
+                 .Where(os => os.ObjectTypeId == (int)ObjectTypeEnum.Kandidats).Select(o => o.SkillId)
                  .ToList();
 
             CandidateViewModel candidateViewModel = new CandidateViewModel

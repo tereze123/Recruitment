@@ -88,7 +88,7 @@ namespace Recruitment.API.Controllers
 
             List<int> skillIds = _context.ObjectSkills
                  .Where(os => os.ObjectId == vacancy.Id)
-                 .Where(os => os.ObjectTypeId == (int)ObjectTypeEnum.Vakance).Select(o => o.Id)
+                 .Where(os => os.ObjectTypeId == (int)ObjectTypeEnum.Vakance).Select(o => o.SkillId)
                  .ToList();
 
             VacancyViewModel vacancyViewModel = new VacancyViewModel
